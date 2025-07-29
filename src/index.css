@@ -1,0 +1,471 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* 1970s Handwritten Aesthetic Colors */
+    --background: 44 32% 94%;
+    /* #faf3e0 */
+    --foreground: 15 20% 24%;
+    /* #3b2f2f */
+    --brand-text: 15 20% 24%;
+    /* #3b2f2f */
+
+    --card: 0 0% 100%;
+    /* white for cards */
+    --card-foreground: 15 20% 24%;
+    /* #3b2f2f */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 20% 24%;
+    /* #3b2f2f */
+
+    /* Warm earthy palette inspired by 1970s */
+    --primary: 15 35% 49%;
+    /* #7c4a3e - warm brown */
+    --primary-foreground: 44 32% 94%;
+    /* #faf3e0 */
+
+    --secondary: 28 25% 65%;
+    /* #a06a4d - light brown */
+    --secondary-foreground: 15 20% 24%;
+    /* #3b2f2f */
+
+    --muted: 40 40% 84%;
+    /* #d6bfa3 - beige */
+    --muted-foreground: 15 20% 24%;
+    /* #3b2f2f */
+
+    --accent: 28 25% 65%;
+    /* #a06a4d */
+    --accent-foreground: 15 20% 24%;
+    /* #3b2f2f */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 15 20% 24%;
+    /* #3b2f2f */
+
+    --border: 28 25% 65%;
+    /* #a06a4d */
+    --input: 44 32% 94%;
+    /* #faf3e0 */
+    --ring: 15 35% 49%;
+    /* #7c4a3e */
+
+    --radius: 1.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 18px;
+    color: #3b2f2f !important;
+    background: #faf3e0;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* Override all text colors to use handwritten theme */
+  * {
+    color: #3b2f2f !important;
+  }
+
+  /* Ensure all elements use handwritten color */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div,
+  button,
+  a {
+    color: #3b2f2f !important;
+  }
+
+  /* Allow colored hearts to override global color */
+  .text-pink-500 {
+    color: rgb(236 72 153) !important;
+  }
+
+  .text-orange-500 {
+    color: rgb(249 115 22) !important;
+  }
+
+  .text-yellow-500 {
+    color: rgb(234 179 8) !important;
+  }
+
+  .text-green-500 {
+    color: rgb(34 197 94) !important;
+  }
+}
+
+@layer utilities {
+
+  /* 1970s Handwritten Utilities */
+  .brand-text {
+    color: #3b2f2f !important;
+  }
+
+  /* Hand-drawn style cards */
+  .handwritten-card {
+    background: #fff;
+    border: 2.5px solid #a06a4d;
+    border-radius: 25px 15px 25px 15px;
+    box-shadow: 5px 8px 0px #d6bfa3;
+    transition: all 0.2s ease;
+  }
+
+  .handwritten-card:hover {
+    box-shadow: 2px 4px 0 #d6bfa3;
+  }
+
+  /* Hand-drawn wobbly cards for features */
+  .wobbly-card {
+    background: #fff;
+    border: 2px solid #a06a4d;
+    border-radius: 22px 13px 19px 14px;
+    box-shadow: 4px 5px 0px #d6bfa3;
+    position: relative;
+  }
+
+  .wobbly-card:before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background: #a06a4d;
+    border-radius: 50%;
+    top: 16px;
+    left: 15px;
+  }
+
+  /* Hand-drawn buttons */
+  .handwritten-button {
+    background: transparent;
+    color: #7c4a3e;
+    border: 3px solid #7c4a3e;
+    border-radius: 30px 10px 30px 10px;
+    box-shadow: 6px 6px 0px #d6bfa3;
+    transition: all 0.15s ease;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: 600;
+    transform: translateY(0);
+  }
+
+  .handwritten-button:hover {
+    background: #7c4a3e;
+    color: #faf3e0;
+    box-shadow: 2px 2px 0 #d6bfa3;
+    transform: translateY(2px);
+  }
+
+  .handwritten-button:active {
+    transform: translateY(4px);
+    box-shadow: 1px 1px 0 #d6bfa3;
+  }
+
+  /* Testimonial quote style */
+  .handwritten-quote {
+    background: #fff9ef;
+    border-left: 6px solid #a06a4d;
+    border-radius: 16px 8px 12px 7px;
+    box-shadow: 2px 4px 0 #e9d3b0;
+    font-style: italic;
+  }
+
+  /* Enhanced Animations with Depth */
+  .fade-in {
+    animation: fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+  }
+
+  .fade-in-delay {
+    animation: fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+    opacity: 0;
+  }
+
+  .fade-in-slow {
+    animation: fade-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+    opacity: 0;
+  }
+
+  /* Floating animation for micro-interactions */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-delay {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  /* Hand-drawn separators */
+  .hand-drawn-separator {
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #a06a4d 20%, #a06a4d 80%, transparent 100%);
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(-0.5deg);
+    opacity: 0.6;
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  .hand-drawn-separator::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 30%;
+    width: 40%;
+    height: 2px;
+    background: #d6bfa3;
+    border-radius: 50%;
+    transform: rotate(1deg);
+  }
+
+  /* Hand-drawn icon style */
+  .hand-drawn-icon {
+    filter: drop-shadow(1px 1px 0 #d6bfa3);
+    transform: rotate(-2deg);
+  }
+
+  /* Sticky Note Testimonials */
+  .sticky-note {
+    background: #fff7e3;
+    border-radius: 8px 8px 8px 20px;
+    box-shadow: 3px 3px 8px rgba(164, 125, 71, 0.2), inset 0 0 0 1px #f4e1bf;
+    border: 1.5px solid #f4e1bf;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .sticky-note::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #d4af37 30%, #b8941f 70%);
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .sticky-note:hover {
+    box-shadow: 4px 4px 12px rgba(164, 125, 71, 0.3), inset 0 0 0 1px #f4e1bf;
+    transform: scale(1.02) !important;
+
+    /* Counter Animation */
+    .counter-animation {
+      transition: all 0.3s ease;
+    }
+
+    /* Testimonial Slide Animation */
+    .testimonial-slide-in {
+      animation: testimonial-appear 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes testimonial-appear {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Form Input Styling */
+    .handwritten-input {
+      background: #fdfcf8;
+      border-radius: 8px;
+      box-shadow: inset 1px 1px 3px rgba(164, 125, 71, 0.1);
+      transform: rotate(-0.5deg);
+      transition: all 0.3s ease;
+    }
+
+    .handwritten-input:focus {
+      transform: rotate(0deg);
+      box-shadow: inset 1px 1px 3px rgba(164, 125, 71, 0.2), 0 0 0 2px rgba(164, 125, 71, 0.2);
+    }
+
+  }
+
+  /* Signature note */
+  .signature-note {
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(160, 106, 77, 0.05);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes text-morph {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(5deg);
+  }
+}
+
+@keyframes nuvori-emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: blur(10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(0px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes peaceful-emerge {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.text-animation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4rem;
+}
+
+.burnout-word {
+  @apply text-2xl md:text-4xl font-patrick font-light;
+  color: hsl(var(--muted-foreground));
+  animation: text-morph 1.5s ease-in-out infinite;
+  opacity: 0;
+}
+
+.nuvori-formation {
+  @apply brand-text;
+  animation: nuvori-emerge 2s ease-out forwards;
+}
+
+.peaceful-word {
+  @apply text-2xl md:text-4xl font-patrick font-light brand-text;
+  animation: peaceful-emerge 1s ease-out forwards;
+  opacity: 0;
+}
