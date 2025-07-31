@@ -10,6 +10,28 @@
     content="Nuvori is an AI-powered emotional support system for caregiver–survivor relationships navigating cancer, cognitive decline, and beyond." />
   <meta name="author" content="Sanjeevani AI" />
 
+  <!-- Reddit Pixel -->
+  <script>
+    !function (w, d) {
+      if (!w.rdt) {
+        var p = w.rdt = function () {
+          p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments)
+        };
+        p.callQueue = [];
+        var t = d.createElement("script");
+        t.src = "https://www.redditstatic.com/ads/pixel.js";
+        t.async = !0;
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(t, s);
+      }
+    }
+      (window, document);
+    rdt('init', 'a2_hearjwqykdo3');
+    rdt('track', 'PageVisit');
+  </script>
+  <!-- End Reddit Pixel -->
+
+
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Nuvori – Emotional OS for Caregiver–Survivor Dyads" />
   <meta property="og:description"
