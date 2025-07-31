@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import Confetti from './Confetti';
+import { supabase } from '@/integrations/supabase/client'; // Supabase import
 
 interface SignupModalProps {
   isOpen: boolean;
@@ -18,14 +19,20 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const { name, email } = formData;
+    const { error } = await supabase.from("signups").insert([{ name, email }]);
+
+    if (error) {
+      console.error("❌ Supabase insert error:", error.message);
+      setIsLoading(false);
+      return;
+    }
 
     setIsLoading(false);
     setIsSubmitted(true);
     setShowConfetti(true);
 
-    // Reset form after 3 seconds and close modal
+    // Reset form and close modal after 3 sec
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: '', email: '' });
