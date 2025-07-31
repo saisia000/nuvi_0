@@ -7,8 +7,8 @@ const HandwrittenCTA = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
 
-  const handleEarlyAccessClick = () => {
-    setModalTitle('Get Early Access');
+  const handleDemoClick = () => {
+    setModalTitle('Experience Nuvi Demo');
     setIsModalOpen(true);
   };
 
@@ -29,24 +29,26 @@ const HandwrittenCTA = () => {
         </p>
 
         <p className="mb-6 font-patrick text-base opacity-80 italic">
-          Nuvori is made by and for real caregivers. No ads. No spam. Just safe, private support when you need it.
+          Nuvori. is made by and for real caregivers. No ads. No spam. Just safe, private support when you need it.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
           <button
-            className="handwritten-button px-9 py-3 text-xl font-patrick"
-            onClick={handleEarlyAccessClick}
+            className="handwritten-button px-6 py-3 text-lg font-patrick w-full relative"
+            onClick={handleDemoClick}
           >
-            Try Nuvori Early
+            <span className="absolute -top-2 -right-2 bg-secondary text-background text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
+            Experience Nuvi
           </button>
           <button
-            className="handwritten-button px-9 py-3 text-xl font-patrick"
+            className="handwritten-button px-6 py-3 text-lg font-patrick w-full"
             onClick={() => navigate('/chat')}
           >
             Talk to Nuvi
           </button>
           <button
-            className="handwritten-button px-9 py-3 text-xl font-patrick"
+            className="handwritten-button px-6 py-3 text-lg font-patrick w-full"
             onClick={handleCommunityClick}
           >
             Join Community Now

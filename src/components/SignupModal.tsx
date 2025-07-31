@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import Confetti from './Confetti';
-import { supabase } from '@/integrations/supabase/client'; // Supabase import
 
 interface SignupModalProps {
   isOpen: boolean;
@@ -10,7 +9,7 @@ interface SignupModalProps {
 }
 
 const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
-  const [formData, setFormData] = useState({ name: '', email: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', role: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -19,28 +18,22 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
     e.preventDefault();
     setIsLoading(true);
 
-    const { name, email } = formData;
-    const { error } = await supabase.from("signups").insert([{ name, email }]);
-
-    if (error) {
-      console.error("❌ Supabase insert error:", error.message);
-      setIsLoading(false);
-      return;
-    }
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
     setIsLoading(false);
     setIsSubmitted(true);
     setShowConfetti(true);
 
-    // Reset form and close modal after 3 sec
+    // Reset form after 3 seconds and close modal
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '' });
+      setFormData({ name: '', email: '', role: '' });
       onClose();
     }, 3000);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -72,7 +65,7 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
                 {title}
               </h2>
               <p className="font-patrick text-primary">
-                Join thousands of caregivers finding peace and support
+                Nuvi is still learning behind the scenes — but we'd love to notify you when she's ready.
               </p>
             </div>
 
@@ -110,13 +103,32 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
                 />
               </div>
 
+              <div>
+                <label htmlFor="role" className="block font-patrick text-primary mb-2">
+                  I am a...
+                </label>
+                <select
+                  id="role"
+                  name="role"
+                  value={formData.role}
+                  onChange={handleInputChange}
+                  required
+                  className="handwritten-input w-full p-3 border-2 border-secondary/30 rounded-lg font-patrick text-primary bg-background focus:border-secondary focus:outline-none transition-colors"
+                >
+                  <option value="">Select your role...</option>
+                  <option value="caregiver">Caregiver</option>
+                  <option value="survivor">Survivor</option>
+                  <option value="both">Both</option>
+                </select>
+              </div>
+
               <div className="pt-4">
                 <button
                   type="submit"
                   disabled={isLoading}
                   className="handwritten-button w-full py-3 text-xl font-patrick disabled:opacity-50"
                 >
-                  {isLoading ? 'Joining...' : 'Join Nuvori'}
+                  {isLoading ? 'Joining...' : 'Join the Waitlist'}
                 </button>
               </div>
             </form>
@@ -133,10 +145,10 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
           <div className="text-center animate-fade-in">
             <div className="mb-4 text-6xl">✓</div>
             <h2 className="font-caveat text-3xl text-secondary mb-4" style={{ textShadow: '1px 1px 0 #d6bfa3' }}>
-              Welcome to Nuvori!
+              Welcome to Nuvori
             </h2>
             <p className="font-patrick text-primary mb-4">
-              Thank you, {formData.name}! We'll be in touch soon with early access details.
+              You're now a Founding Member of Nuvori 💐
             </p>
             <p className="font-patrick text-sm text-primary opacity-75 italic">
               You're not alone in this journey. We're here with you.

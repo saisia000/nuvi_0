@@ -162,7 +162,7 @@ const Navbar = () => {
                 className="wobbly-button px-6 py-2 text-primary font-patrick font-medium hover:bg-secondary/20 hover:scale-105 transition-all duration-200"
                 onClick={() => setIsModalOpen(true)}
               >
-                Get Early Access
+                Be a Founding Member
               </button>
             </div>
 
@@ -280,7 +280,7 @@ const Navbar = () => {
                     setIsMenuOpen(false);
                   }}
                 >
-                  Get Early Access
+                  Be a Founding Member
                 </button>
               </div>
             </div>
@@ -291,7 +291,7 @@ const Navbar = () => {
       <SignupModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Get Early Access"
+        title="Be a Founding Member"
       />
     </>
   );

@@ -22,14 +22,14 @@ const HandwrittenHero = () => {
           className="handwritten-button px-9 py-3 text-xl font-patrick"
           onClick={() => setIsModalOpen(true)}
         >
-          Try Nuvori. Early
+          Join the Waitlist
         </button>
       </section>
 
       <SignupModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Get Early Access"
+        title="Be a Founding Member"
       />
     </>
   );

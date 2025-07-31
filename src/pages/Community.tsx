@@ -71,7 +71,7 @@ const Community = () => {
 
                 <div>
                   <h3 className="font-bold text-lg mb-2">AI-Powered Insights</h3>
-                  <p>Get early access to Nuvi, our AI companion that learns from community wisdom to better support your dyad.</p>
+                  <p>Join the waitlist to get early access to Nuvi, our AI companion that learns from community wisdom to better support your dyad.</p>
                 </div>
               </div>
 
