@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import SignupModal from './SignupModal';
 
 const HandwrittenCTA = () => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
 
@@ -21,23 +23,29 @@ const HandwrittenCTA = () => {
         <h2 className="font-caveat text-4xl mb-4 text-primary" style={{ textShadow: '1px 1px 0 #f3e2cd' }}>
           Ready to stop surviving, and start living again?
         </h2>
-        
+
         <p className="mb-2 font-bold font-patrick text-lg">
           No stress. No spam. Just care, restored.
         </p>
-        
+
         <p className="mb-6 font-patrick text-base opacity-80 italic">
           Nuvori is made by and for real caregivers. No ads. No spam. Just safe, private support when you need it.
         </p>
-        
-        <div className="space-x-4">
-          <button 
-            className="handwritten-button px-9 py-3 text-xl font-patrick mr-3"
+
+        <div className="flex flex-wrap justify-center gap-4">
+          <button
+            className="handwritten-button px-9 py-3 text-xl font-patrick"
             onClick={handleEarlyAccessClick}
           >
-            Get Early Access
+            Try Nuvori Early
           </button>
-          <button 
+          <button
+            className="handwritten-button px-9 py-3 text-xl font-patrick"
+            onClick={() => navigate('/chat')}
+          >
+            Talk to Nuvi
+          </button>
+          <button
             className="handwritten-button px-9 py-3 text-xl font-patrick"
             onClick={handleCommunityClick}
           >
@@ -46,7 +54,7 @@ const HandwrittenCTA = () => {
         </div>
       </section>
 
-      <SignupModal 
+      <SignupModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title={modalTitle}

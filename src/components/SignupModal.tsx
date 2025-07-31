@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import Confetti from './Confetti';
 
 interface SignupModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
 
     setIsLoading(false);
     setIsSubmitted(true);
+    setShowConfetti(true);
 
     // Reset form after 3 seconds and close modal
     setTimeout(() => {
@@ -35,6 +38,10 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleConfettiComplete = () => {
+    setShowConfetti(false);
   };
 
   if (!isOpen) return null;
@@ -129,6 +136,8 @@ const SignupModal = ({ isOpen, onClose, title }: SignupModalProps) => {
             </p>
           </div>
         )}
+
+        <Confetti trigger={showConfetti} onComplete={handleConfettiComplete} />
       </div>
     </div>
   );

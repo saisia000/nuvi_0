@@ -1,11 +1,14 @@
+import { useNavigate } from 'react-router-dom';
+
 const NuviFeaturesSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-16 px-6">
       <div className="max-w-4xl mx-auto">
         <h3 className="font-caveat text-4xl text-secondary mb-12 text-center" style={{ textShadow: '1px 1px 0 #d6bfa3' }}>
           What Makes Nuvi Special
         </h3>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           <div className="handwritten-card p-6">
             <div className="flex items-start gap-3 mb-4">

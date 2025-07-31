@@ -469,3 +469,45 @@ All colors MUST be HSL.
   animation: peaceful-emerge 1s ease-out forwards;
   opacity: 0;
 }
+
+/* --- Nuvori falling flowers --- */
+.nuvi-flower {
+  position: fixed;
+  top: -10vh;
+  left: var(--left);
+  font-size: var(--size);
+  line-height: 1;
+  color: var(--color);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .15));
+  animation:
+    nuvi-fall var(--duration) linear var(--delay) forwards,
+    nuvi-sway calc(var(--duration) * 0.9) ease-in-out var(--delay) 2 alternate;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+@keyframes nuvi-fall {
+  0% {
+    transform: translateY(-12vh) translateX(0) rotate(0deg);
+    opacity: 0.95;
+  }
+
+  55% {
+    transform: translateY(55vh) translateX(var(--offsetX)) rotate(var(--spin));
+  }
+
+  100% {
+    transform: translateY(105vh) translateX(calc(var(--offsetX) * 2)) rotate(calc(var(--spin) * 2));
+    opacity: 0;
+  }
+}
+
+@keyframes nuvi-sway {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(10px);
+  }
+}
