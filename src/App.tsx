@@ -4,6 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
+import RoleSelection from "./pages/RoleSelection";
+import Investor from "./pages/Investor";
+import Reviewer from "./pages/Reviewer";
+import Press from "./pages/Press";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -21,6 +25,13 @@ import UnderstandingNuvori from "./pages/UnderstandingNuvori";
 import AboutNuvi from "./pages/AboutNuvi";
 import TalkToNuvi from "./pages/TalkToNuvi";
 import NuviBlueprint from "./pages/NuviBlueprint";
+import ResearcherSelection from "./pages/ResearcherSelection";
+import ClinicalResearcher from "./pages/ClinicalResearcher";
+import EmotionalHealthResearcher from "./pages/EmotionalHealthResearcher";
+import Product from "./pages/Product";
+import ProfileSetup from "./pages/ProfileSetup";
+import ResearchVerification from "./pages/ResearchVerification";
+import Survey from "./pages/Survey";
 
 const queryClient = new QueryClient();
 
@@ -31,29 +42,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/chat" element={<NuviChat />} />
-          <Route path="/our-approach" element={<OurApproach />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/consumer-data" element={<ConsumerData />} />
-          <Route path="/our-mission" element={<OurMission />} />
-          <Route path="/what-we-believe" element={<WhatWeBelieve />} />
-          <Route path="/how-we-help-dyads" element={<HowWeHelpDyads />} />
-          <Route path="/our-vision" element={<OurVision />} />
-          <Route path="/founders-story" element={<FoundersStory />} />
-          <Route path="/understanding-nuvori" element={<UnderstandingNuvori />} />
-          <Route path="/about-nuvi" element={<AboutNuvi />} />
-          <Route path="/talk-to-nuvi" element={<TalkToNuvi />} />
-          <Route path="/nuvi-blueprint" element={<NuviBlueprint />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
-
-export default App;
+          <Route path="/" element={<RoleSelection />} />
+          <Route path="/caregivers" element={<Landing />} />
+          <Route path="/investor" element={<Investor />} />
+          <Route path=
