@@ -5,6 +5,7 @@ import HandwrittenFeatures from '@/components/HandwrittenFeatures';
 import ImpactStoriesSection from '@/components/ImpactStoriesSection';
 import CaregiverBurdenChart from '@/components/CaregiverBurdenChart';
 import HandwrittenCTA from '@/components/HandwrittenCTA';
+import SurveySection from '@/components/SurveySection';
 import HandwrittenFooter from '@/components/HandwrittenFooter';
 import FallingFlowers from '@/components/FallingFlowers';
 const Landing = () => {
@@ -30,6 +31,8 @@ const Landing = () => {
             <ImpactStoriesSection />
             <div className="hand-drawn-separator my-8"></div>
             <CaregiverBurdenChart />
+            <div className="hand-drawn-separator my-8"></div>
+            <SurveySection />
           </main>
           <HandwrittenFooter />
         </div>
