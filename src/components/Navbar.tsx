@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isNuviDropdownOpen, setIsNuviDropdownOpen] = useState(false);
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -38,44 +37,10 @@ const Navbar = () => {
                 </button>
                 
                 {isNuviDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-background border-2 border-secondary rounded-lg shadow-lg z-50">
-                    <button 
-                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
-                      onClick={() => {
-                        navigate('/about-nuvi');
-                        setIsNuviDropdownOpen(false);
-                      }}
-                    >
-                      About Nuvi
-                    </button>
-                    <button 
-                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
-                      onClick={() => {
-                        navigate('/understanding-nuvori');
-                        setIsNuviDropdownOpen(false);
-                      }}
-                    >
-                      Understanding Nuvi
-                    </button>
-                    <button 
-                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
-                      onClick={() => {
-                        navigate('/talk-to-nuvi');
-                        setIsNuviDropdownOpen(false);
-                      }}
-                    >
-                      Talk to Nuvi
-                    </button>
-                    <button 
-                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
-                      onClick={() => {
-                        navigate('/nuvi-blueprint');
-                        setIsNuviDropdownOpen(false);
-                      }}
-                    >
-                      Nuvi Blueprint
-                    </button>
-                    <div className="border-t border-secondary/20 my-1"></div>
+                  <div className="absolute top-full left-0 mt-2 w-60 bg-background border-2 border-secondary rounded-lg shadow-lg z-50">
+                    <div className="px-4 py-2 text-primary font-patrick font-bold text-sm border-b border-secondary/20">
+                      About Us
+                    </div>
                     <button 
                       className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
                       onClick={() => {
@@ -88,24 +53,6 @@ const Navbar = () => {
                     <button 
                       className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
                       onClick={() => {
-                        navigate('/what-we-believe');
-                        setIsNuviDropdownOpen(false);
-                      }}
-                    >
-                      What We Believe
-                    </button>
-                    <button 
-                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
-                      onClick={() => {
-                        navigate('/how-we-help-dyads');
-                        setIsNuviDropdownOpen(false);
-                      }}
-                    >
-                      How We Help Dyads Thrive
-                    </button>
-                    <button 
-                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
-                      onClick={() => {
                         navigate('/our-vision');
                         setIsNuviDropdownOpen(false);
                       }}
@@ -113,7 +60,16 @@ const Navbar = () => {
                       Our Vision
                     </button>
                     <button 
-                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 rounded-b-lg transition-colors"
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
+                      onClick={() => {
+                        navigate('/what-we-believe');
+                        setIsNuviDropdownOpen(false);
+                      }}
+                    >
+                      What We Believe
+                    </button>
+                    <button 
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors border-b border-secondary/20"
                       onClick={() => {
                         navigate('/founders-story');
                         setIsNuviDropdownOpen(false);
@@ -121,23 +77,72 @@ const Navbar = () => {
                     >
                       Founder's Story
                     </button>
+                    
+                    <div className="px-4 py-2 text-primary font-patrick font-bold text-sm border-b border-secondary/20">
+                      About Nuvi
+                    </div>
+                    <button 
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
+                      onClick={() => {
+                        navigate('/understanding-nuvori');
+                        setIsNuviDropdownOpen(false);
+                      }}
+                    >
+                      Understanding Nuvi
+                    </button>
+                    <button 
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
+                      onClick={() => {
+                        navigate('/nuvi-blueprint');
+                        setIsNuviDropdownOpen(false);
+                      }}
+                    >
+                      Nuvi Blueprint
+                    </button>
+                    <button 
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors border-b border-secondary/20"
+                      onClick={() => {
+                        navigate('/talk-to-nuvi');
+                        setIsNuviDropdownOpen(false);
+                      }}
+                    >
+                      Talk to Nuvi
+                    </button>
+                    
+                    <div className="px-4 py-2 text-primary font-patrick font-bold text-sm border-b border-secondary/20">
+                      Founding Members Community
+                    </div>
+                    <button 
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors"
+                      onClick={() => {
+                        navigate('/community');
+                        setIsNuviDropdownOpen(false);
+                      }}
+                    >
+                      Join the Dyad Bridge Community
+                    </button>
+                    <button 
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 transition-colors border-b border-secondary/20"
+                      onClick={() => {
+                        navigate('/how-we-help-dyads');
+                        setIsNuviDropdownOpen(false);
+                      }}
+                    >
+                      How We Help Dyads Thrive
+                    </button>
+                    
+                    <button 
+                      className="block w-full text-left px-4 py-3 text-primary font-patrick hover:bg-secondary/20 rounded-b-lg transition-colors"
+                      onClick={() => {
+                        navigate('/survey');
+                        setIsNuviDropdownOpen(false);
+                      }}
+                    >
+                      Share Your Experience
+                    </button>
                   </div>
                 )}
               </div>
-              
-              <button 
-                className="text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 transform hover:scale-105"
-                onClick={() => navigate('/community')}
-              >
-                Join the Dyad Bridge Community
-              </button>
-              
-              <button 
-                className="text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 transform hover:scale-105"
-                onClick={() => navigate('/survey')}
-              >
-                Share Your Experience
-              </button>
             </div>
             
             <button 
@@ -164,46 +169,11 @@ const Navbar = () => {
           <div className="md:hidden bg-background border-2 border-secondary rounded-xl mt-2 p-6 space-y-6">
             <div className="space-y-4">
               <div className="space-y-2">
-                <div className="px-3 py-1 text-primary font-patrick font-bold text-sm">Nuvori</div>
+                <div className="px-3 py-1 text-primary font-patrick font-bold text-sm border-b border-secondary/20 pb-2">Nuvori</div>
+                
+                <div className="px-3 py-1 text-primary font-patrick font-bold text-xs ml-2">About Us</div>
                 <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
-                  onClick={() => {
-                    navigate('/about-nuvi');
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  About Nuvi
-                </button>
-                <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
-                  onClick={() => {
-                    navigate('/understanding-nuvori');
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  Understanding Nuvi
-                </button>
-                <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
-                  onClick={() => {
-                    navigate('/talk-to-nuvi');
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  Talk to Nuvi
-                </button>
-                <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
-                  onClick={() => {
-                    navigate('/nuvi-blueprint');
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  Nuvi Blueprint
-                </button>
-                <div className="border-t border-secondary/20 my-2 ml-2"></div>
-                <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4"
                   onClick={() => {
                     navigate('/our-mission');
                     setIsMenuOpen(false);
@@ -212,25 +182,7 @@ const Navbar = () => {
                   Our Mission
                 </button>
                 <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
-                  onClick={() => {
-                    navigate('/what-we-believe');
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  What We Believe
-                </button>
-                <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
-                  onClick={() => {
-                    navigate('/how-we-help-dyads');
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  How We Help Dyads Thrive
-                </button>
-                <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4"
                   onClick={() => {
                     navigate('/our-vision');
                     setIsMenuOpen(false);
@@ -239,7 +191,16 @@ const Navbar = () => {
                   Our Vision
                 </button>
                 <button 
-                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4"
+                  onClick={() => {
+                    navigate('/what-we-believe');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  What We Believe
+                </button>
+                <button 
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4 mb-4"
                   onClick={() => {
                     navigate('/founders-story');
                     setIsMenuOpen(false);
@@ -247,29 +208,66 @@ const Navbar = () => {
                 >
                   Founder's Story
                 </button>
+                
+                <div className="px-3 py-1 text-primary font-patrick font-bold text-xs ml-2">About Nuvi</div>
+                <button 
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4"
+                  onClick={() => {
+                    navigate('/understanding-nuvori');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Understanding Nuvi
+                </button>
+                <button 
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4"
+                  onClick={() => {
+                    navigate('/nuvi-blueprint');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Nuvi Blueprint
+                </button>
+                <button 
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4 mb-4"
+                  onClick={() => {
+                    navigate('/talk-to-nuvi');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Talk to Nuvi
+                </button>
+                
+                <div className="px-3 py-1 text-primary font-patrick font-bold text-xs ml-2">Founding Members Community</div>
+                <button 
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4"
+                  onClick={() => {
+                    navigate('/community');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Join the Dyad Bridge Community
+                </button>
+                <button 
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-4 mb-4"
+                  onClick={() => {
+                    navigate('/how-we-help-dyads');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  How We Help Dyads Thrive
+                </button>
+                
+                <button 
+                  className="block w-full text-left text-primary font-patrick font-medium hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200 ml-2"
+                  onClick={() => {
+                    navigate('/survey');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Share Your Experience
+                </button>
               </div>
-            </div>
-            
-            <div className="space-y-4">
-              <button 
-                className="block w-full text-left text-primary font-patrick font-medium text-lg hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200"
-                onClick={() => {
-                  navigate('/community');
-                  setIsMenuOpen(false);
-                }}
-              >
-                Join the Dyad Bridge Community
-              </button>
-              
-              <button 
-                className="block w-full text-left text-primary font-patrick font-medium text-lg hover:text-background hover:bg-primary px-3 py-2 rounded-lg transition-all duration-200"
-                onClick={() => {
-                  navigate('/survey');
-                  setIsMenuOpen(false);
-                }}
-              >
-                Share Your Experience
-              </button>
             </div>
             
             <div className="pt-4 border-t-2 border-dashed border-secondary">
