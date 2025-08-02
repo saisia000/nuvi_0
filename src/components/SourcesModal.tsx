@@ -10,16 +10,29 @@ const SurveyModal = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    console.log('SurveyModal component mounted');
+    
+    // For testing, let's temporarily clear the localStorage
+    localStorage.removeItem('hasSeenSurvey');
+    
     // Check if user has already seen the survey
     const hasSeenSurvey = localStorage.getItem('hasSeenSurvey');
+    console.log('Has seen survey before:', hasSeenSurvey);
     
     if (!hasSeenSurvey) {
-      // Show modal after 3 seconds
+      console.log('Setting timer to show modal in 1 second...');
+      // Reduced timer for testing
       const timer = setTimeout(() => {
+        console.log('Timer fired, showing modal');
         setIsOpen(true);
-      }, 3000);
+      }, 1000);
 
-      return () => clearTimeout(timer);
+      return () => {
+        console.log('Cleaning up timer');
+        clearTimeout(timer);
+      };
+    } else {
+      console.log('User has already seen survey, not showing modal');
     }
   }, []);
 
