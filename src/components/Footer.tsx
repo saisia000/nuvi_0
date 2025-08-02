@@ -8,15 +8,15 @@ const Footer = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="#" className="brand-text opacity-60 hover:opacity-80 transition-opacity font-outfit">
+            <a href="/privacy" className="brand-text opacity-60 hover:opacity-80 transition-opacity font-outfit">
               Privacy Policy
             </a>
             <span className="brand-text opacity-40">·</span>
-            <a href="#" className="brand-text opacity-60 hover:opacity-80 transition-opacity font-outfit">
+            <a href="/terms" className="brand-text opacity-60 hover:opacity-80 transition-opacity font-outfit">
               Terms
             </a>
             <span className="brand-text opacity-40">·</span>
-            <a href="#" className="brand-text opacity-60 hover:opacity-80 transition-opacity font-outfit">
+            <a href="/consumer-data" className="brand-text opacity-60 hover:opacity-80 transition-opacity font-outfit">
               Consumer Health Data
             </a>
             <span className="brand-text opacity-40">·</span>
