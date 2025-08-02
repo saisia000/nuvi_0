@@ -19,10 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'patrick': ['Patrick Hand', 'cursive'],
-				'caveat': ['Caveat', 'cursive'],
-				'sans': ['Patrick Hand', 'cursive'],
-			},
+    				'poppins': ['Poppins', 'sans-serif'],
+   			 	'sans': ['Poppins', 'Inter', 'Segoe UI', 'Roboto', 'sans-serif'],
+				},
+
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
